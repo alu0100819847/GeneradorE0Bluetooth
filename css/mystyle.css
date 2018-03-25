@@ -74,3 +74,25 @@ float: right;
 .output1 {
 	color: red;
 }
+
+.navbar-brand-active {
+    color: #be9e21;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+		margin-left: -15px;
+		font-size: 24px;
+    text-transform: uppercase;
+    padding: 15px 0px;
+    margin-top: 6px;
+		float: left;
+    height: 50px;
+
+    line-height: 20px;
+
+    text-decoration: none;
+		background-color: transparent;
+
+    box-sizing: border-box;
+
+    letter-spacing: 0.5px;
+}

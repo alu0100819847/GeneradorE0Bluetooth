@@ -1,4 +1,5 @@
-
+var Int = 1;
+var Numb = 2;
 var S = [];
 var Nimp = [];
 function rein() {

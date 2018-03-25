@@ -1,3 +1,5 @@
+var Int = 1;
+var Numb = 1;
 var num = [];
 var K = "";
 var I = "";
