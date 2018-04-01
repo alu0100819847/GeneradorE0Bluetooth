@@ -1,9 +1,9 @@
-# PRÁCTICA 4. Multiplicador de SNOW 3G y AES.
+# Práctica 5: Generador E0 de Bluetooth
 
 ### OBJETIVO
 
-  Implementar multiplicador con polinomio de SNOW y AES.
+  Implementar un generador de clave E0.
 
 
 
-[Despliegue](https://alu0100819847.github.io/Multiplicador_SNOW_AES/)
+[Despliegue](https://alu0100819847.github.io/GeneradorE0Bluetooth/)
