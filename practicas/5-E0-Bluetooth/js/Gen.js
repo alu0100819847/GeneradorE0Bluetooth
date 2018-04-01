@@ -1,42 +1,33 @@
 
 function Generador(){
   var r = [];
-  var n = 0;
   var sol = "";
-  var r1 = "";
-  var r2 = "";
-  var t1 = "";
-  var t2 = "";
   var salida = "";
-  r[0] = key1.value;
-  r[1] = key2.value;
-  r[2] = key3.value;
-  r[3] = key4.value;
-  n = nb.value;
-  r1 = "" + sR1.value;
-  ek1.innerHTML = r[0];
-  ek2.innerHTML = r[1];
-  ek3.innerHTML = r[2];
-  ek4.innerHTML = r[3];
-  enb.innerHTML = n;
-  eR1.innerHTML= r1;
-  for(var j = 0; j < n; j++) {
-    console.log("R10 -> "+ r1);
-    console.log("Salida -> " + salida);
+
+  r = readIntro();
+
+  var r1 = "" + r["r1"];
+
+  printIntro([r["r"], r["r1"], r["n"] ]);
+
+  for(var j = 0; j < r["n"]; j++) {
+  /*  console.log("R10 -> "+ r1);
+    console.log("Salida -> " + salida);*/
     var s = [];
     for(var i = 0; i < 4; i++) {
-      s[i] = strtobin[r[i][0]];
-      r[i] = LSFR(i, r[i]);
-      console.log("Sale: "+s[i])
-      console.log("Queda: "+r[i]);
+      s[i] = strtobin[r["r"][i][0]];
+      r["r"][i] = LSFR(i, r["r"][i]);
+    /*  console.log("Sale: "+s[i])
+      console.log("Queda: "+r["r"][i]);*/
     }
     console.log(s);
-    sol = suma(s);
-    sol = sol + parseInt(boxR(r1), 2);
+    sol = suma(s) + parseInt(boxR(r1), 2);
+
     salida ="" + gxor(group(s, boxR(r1)[1])) + salida;
-    r2 = boxR(r1);
-    t1 = boxR(r1);
-    t2 = boxR(r2);
+
+    var r2 = boxR(r1);
+    var t1 = boxR(r1);
+    var t2 = boxR(r2);
     /*
     console.log("Entrada r1 -> "+r1);
     console.log("Salida r1 -> "+boxR(r1));
@@ -48,13 +39,14 @@ function Generador(){
     console.log("Salida t2 -> "+ft2(t2));
     console.log("sol -> "+sol);
     */
+
     sol = mod2(sol.toString(2));
     sol = txor(sol, ft2(t2));
     sol = txor(sol, ft1(t1));
 
     r1 = sol;
   }
-  esal.innerHTML = salida;
+  printOutput(salida);
   console.log("Salida -> " + salida);
 }
 
@@ -134,4 +126,34 @@ function group(a, b) {
   sol ="" + b + sol;
   console.log("Group -> "+sol);
   return sol;
+}
+
+function printIntro(v) {
+  console.log(v);
+  var output = $("table[id=outDatos] td");
+  for(var i = 0; i < v[0].length; i++){
+    output[i].children[0].innerHTML = v[0][i];
+  }
+  for(var i = 1; i < v.length; i++){
+    output[i+v[0].length - 1].children[0].innerHTML = v[i];
+    console.log("lol"+v[i]);
+  }
+}
+function printOutput(sol){
+  var output = $("table[id=outDatos] td");
+  output[output.length -1].children[0].innerHTML = sol;
+}
+
+function readIntro(){
+  var v = [];
+  var r = [];
+  var html = $("table[id=introDatos] td");
+  for(var i = 0; i < html.length -1 ; i++){
+    v[i] = html[i].children[0].value;
+  }
+  r["r"] = [v[0], v[1], v[2], v[3]]
+  r["r1"] = v[4];
+  r["n"] = v[5];
+  console.log(r);
+  return r;
 }
