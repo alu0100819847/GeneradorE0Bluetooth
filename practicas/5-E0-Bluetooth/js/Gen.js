@@ -20,7 +20,7 @@ function Generador(){
     /*  console.log("Sale: "+s[i])
       console.log("Queda: "+r["r"][i]);*/
     }
-    console.log(s);
+    //console.log(s);
     sol = suma(s) + parseInt(boxR(r1), 2);
 
     salida ="" + gxor(group(s, boxR(r1)[1])) + salida;
@@ -47,7 +47,7 @@ function Generador(){
     r1 = sol;
   }
   printOutput(salida);
-  console.log("Salida -> " + salida);
+  //console.log("Salida -> " + salida);
 }
 
 function LSFR(registro, key) {
@@ -85,7 +85,7 @@ function txor(a, b){
       else sol = sol + "1";
     }
   } else {
-    console.log("Xor con elementos de distinto tamaño");
+    //console.log("Xor con elementos de distinto tamaño");
   }
   return sol;
 }
@@ -124,19 +124,19 @@ function group(a, b) {
     sol = "" + a[i] + sol;
   }
   sol ="" + b + sol;
-  console.log("Group -> "+sol);
+  //console.log("Group -> "+sol);
   return sol;
 }
 
 function printIntro(v) {
-  console.log(v);
+  //console.log(v);
   var output = $("table[id=outDatos] td");
   for(var i = 0; i < v[0].length; i++){
     output[i].children[0].innerHTML = v[0][i];
   }
   for(var i = 1; i < v.length; i++){
     output[i+v[0].length - 1].children[0].innerHTML = v[i];
-    console.log("lol"+v[i]);
+    //console.log("lol"+v[i]);
   }
 }
 function printOutput(sol){
@@ -154,6 +154,6 @@ function readIntro(){
   r["r"] = [v[0], v[1], v[2], v[3]]
   r["r1"] = v[4];
   r["n"] = v[5];
-  console.log(r);
+  //console.log(r);
   return r;
 }

@@ -21,7 +21,7 @@
   <script type="text/javascript" src="js/global.js"></script>
   <script type="text/javascript" src="js/Registros.js"></script>
   <script type="text/javascript" src="js/Gen.js"></script>
-  <script type="text/javascript" src="js/herramientas.js"></script>
+  <script type="text/javascript" src="js/Verify.js"></script>
 </head>
 
 <body>
@@ -70,28 +70,29 @@
                   </tr>
                   <tr>
                     <th><div><h3 class= "lab-intro-datos">Key 3: </h3></div></th>
-                    <td><input id="key3" autofocus onchange="Generador()" placeholder="Key 33b" size="40"></td>
+                    <td><input id="key3" autofocus onchange="verifica()" placeholder="Key 33b" size="40"></td>
                   </tr>
                   <tr>
                     <th><div><h3 class= "lab-intro-datos">Key 4: </h3></div></th>
-                    <td><input id="key4" autofocus onchange="Generador()" placeholder="Key 39b" size="40"></td>
+                    <td><input id="key4" autofocus onchange="verifica()" placeholder="Key 39b" size="40"></td>
                   </tr>
                   <tr>
                     <th><div><h3 class= "lab-intro-datos">Semilla R1: </h3></div></th>
-                    <td><input id="sR1" autofocus onchange="Generador()" placeholder="key 2b" size="40"></td>
+                    <td><input id="sR1" autofocus onchange="verifica()" placeholder="key 2b" size="40"></td>
                   </tr>
                   <tr>
                     <th><div><h3 class= "lab-intro-datos">Bits de salida: </h3></div></th>
-                    <td><input id="nb" autofocus onchange="Generador()" placeholder="Nº bits" size="40"></td>
+                    <td><input id="nb" autofocus onchange="verifica()" placeholder="Nº bits" size="40"></td>
                   </tr>
                   <tr>
                     <th></th>
                     <td>
                       <button class="boton2" onClick="clean()">BORRAR</button>
-                      <button class="boton2" onClick="Generador()">Run</button>
+                      <button class="boton2" onClick="verifica()">Run</button>
                     </td>
                   </tr>
                 </table>
+                <span class="output1" id="error"></span>
               </div>
             </div>
 
@@ -139,40 +140,10 @@
                   <a href="modVernam.html" class="mybtn">Modificación</a>
                 </div>
               </div>
-              <div class="resultados">
-                <table id="Ejemplo">
-                  <tr><th><h2>Ejemplo 1: </h2></th></tr>
-                  <tr>
-                    <th> key 1: </th>
-                    <td id = "ck1">1111111111111111111111110</td>
-                  </tr>
-                  <tr>
-                    <th> key 2: </th>
-                    <td id = "ck2">1111111111111111111111111111110</td>
-                  </tr>
-                  <tr>
-                    <th> key 3: </th>
-                    <td id = "ck3">111111111111111111111111111111110</td>
-                  </tr>
-                  <tr>
-                    <th> key 4: </th>
-                    <td id= "ck4">0101010101010101010101010101010101010101</td>
-                  </tr>
-                  <tr>
-                    <th> Semilla R1: </th>
-                    <td id = "cs">01</td>
-                  </tr>
-                  <tr>
-                    <th> Bits de salida: </th>
-                    <td id = "cn">4</td>
-                  </tr>
-                  <tr>
-                    <th></th>
-                    <td><button class="boton1" onClick="copia()"></button></td>
-                  </tr>
-              </table>
-              <table>
-              </table>
+              <div id="Ejemplos">
+
+                <div>
+                </div>
               </div>
 
 
@@ -189,7 +160,8 @@
   <script src="../../js/wow.js"></script>
   <script src="../../js/jquery.bxslider.min.js"></script>
   <script src="../../js/custom.js"></script>
-  <script src="../js/menu.js"></script>
+  <script type="text/javascript" src="../js/menu.js"></script>
+  <script type="text/javascript" src="js/herramientas.js"></script>
 
 </body>
 </html>
