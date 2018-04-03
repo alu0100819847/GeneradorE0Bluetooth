@@ -19,9 +19,9 @@
 
 
   <script type="text/javascript" src="js/global.js"></script>
-  <script type="text/javascript" src="js/Registros.js"></script>
-  <script type="text/javascript" src="js/Gen.js"></script>
-  <script type="text/javascript" src="js/Verify.js"></script>
+  <script type="text/javascript" src="js/modRegistros.js"></script>
+  <script type="text/javascript" src="js/modGen.js"></script>
+  <script type="text/javascript" src="js/modVerify.js"></script>
 </head>
 
 <body>
@@ -74,6 +74,10 @@
                   </tr>
                   <tr>
                     <th><div><h3 class= "lab-intro-datos">Key 4: </h3></div></th>
+                    <td><input id="key4" autofocus onchange="verifica()" placeholder="Key 39b" size="40"></td>
+                  </tr>
+                  <tr>
+                    <th><div><h3 class= "lab-intro-datos">Key 5: </h3></div></th>
                     <td><input id="key4" autofocus onchange="verifica()" placeholder="Key 39b" size="40"></td>
                   </tr>
                   <tr>
@@ -140,9 +144,8 @@
             </div>
 
               <div class="row justify-content-center">
-
                 <div class="col-4 col-lg-2">
-                  <a href="modGenerador.html" class="mybtn">Modificación</a>
+                  <a href="Generador.html" class="mybtn">Original</a>
                 </div>
               </div>
               <div id="Ejemplos">
@@ -166,7 +169,7 @@
   <script src="../../js/jquery.bxslider.min.js"></script>
   <script src="../../js/custom.js"></script>
   <script type="text/javascript" src="../js/menu.js"></script>
-  <script type="text/javascript" src="js/herramientas.js"></script>
+  <script type="text/javascript" src="js/modherramientas.js"></script>
 
 </body>
 </html>
