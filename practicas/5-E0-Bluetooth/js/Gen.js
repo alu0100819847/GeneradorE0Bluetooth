@@ -142,7 +142,7 @@ function printIntro(v) {
 }
 function printOutput(sol){
   var output = $("table[id=outDatos] td");
-  output[output.length -1].children[0].innerHTML = sol;
+  output[output.length -1].children[0].innerHTML = invertirSol(sol);
 }
 
 function readIntro(){
@@ -171,4 +171,12 @@ function invertirKeys(v){
   }
   console.log(s);
   return s;
+}
+
+function invertirSol(str){
+  var temp = "";
+  for(var i = 0; i < str.length; i++){
+    temp = "" +str[i]+ temp;
+  }
+  return temp;
 }
