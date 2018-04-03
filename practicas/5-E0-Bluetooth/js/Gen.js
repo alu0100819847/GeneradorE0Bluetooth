@@ -10,6 +10,7 @@ function Generador(){
 
   printIntro([r["r"], r["r1"], r["n"] ]);
 
+  if(r["ty"] == 1) r["r"] = invertirKeys(r["r"]);
   for(var j = 0; j < r["n"]; j++) {
   /*  console.log("R10 -> "+ r1);
     console.log("Salida -> " + salida);*/
@@ -154,6 +155,20 @@ function readIntro(){
   r["r"] = [v[0], v[1], v[2], v[3]]
   r["r1"] = v[4];
   r["n"] = v[5];
+  r["ty"] = v[6];
   //console.log(r);
   return r;
+}
+
+function invertirKeys(v){
+  var s = []
+  for(var i = 0; i < v.length; i++) {
+    var temp = "";
+    for(var j = v[i].length -1; j >= 0 ; j--){
+      temp = "" + temp + v[i][j];
+    }
+    s[i] = temp;
+  }
+  console.log(s);
+  return s;
 }
